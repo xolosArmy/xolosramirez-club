@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>xolosramirez.club — Eventos & Círculos</title>
+  <meta name="description" content="Eventos privados xolosArmy: ritual, comunidad y convivencia con Xoloitzcuintles Ramírez. Acceso mediante NFT de Presencia (Tonalli)." />
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --panel:#121214;
+      --text:#f2f2f2;
+      --muted:#b7b7b7;
+      --line:rgba(255,255,255,.10);
+      --accent:#d7a84a;   /* oro/ámbar */
+      --accent2:#e56b2d;  /* brasa */
+      --shadow: 0 20px 60px rgba(0,0,0,.55);
+      --radius:18px;
+      --max:980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 20% 10%, rgba(215,168,74,.18), transparent 55%),
+        radial-gradient(900px 500px at 85% 25%, rgba(229,107,45,.12), transparent 60%),
+        radial-gradient(900px 500px at 50% 90%, rgba(255,255,255,.06), transparent 60%),
+        var(--bg);
+      min-height:100vh;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px}
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:10px 0 26px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; text-decoration:none;
+      letter-spacing:.6px;
+    }
+    .mark{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(215,168,74,.95), rgba(229,107,45,.85));
+      box-shadow: 0 12px 30px rgba(215,168,74,.18);
+    }
+    .brand strong{font-weight:700}
+    .nav{display:flex; gap:12px; flex-wrap:wrap}
+    .nav a{
+      text-decoration:none; color:var(--muted);
+      border:1px solid var(--line);
+      padding:10px 12px; border-radius:999px;
+      background: rgba(18,18,20,.55);
+    }
+    .nav a:hover{color:var(--text); border-color:rgba(215,168,74,.4)}
+    .hero{
+      padding:56px 18px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background: rgba(18,18,20,.58);
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(700px 300px at 30% 10%, rgba(215,168,74,.18), transparent 60%),
+        radial-gradient(600px 300px at 80% 20%, rgba(229,107,45,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .hero > *{position:relative}
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    .sub{
+      margin:0 0 22px;
+      color:var(--muted);
+      max-width:70ch;
+      font-size: clamp(15px, 2.2vw, 18px);
+      line-height:1.55;
+    }
+    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .pill{
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.22);
+      padding:10px 12px; border-radius:999px;
+      color:var(--muted); font-size:14px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      margin-top:18px;
+    }
+    @media (max-width: 860px){
+      .grid{grid-template-columns:1fr}
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background: rgba(18,18,20,.62);
+      padding:18px;
+      box-shadow: 0 10px 40px rgba(0,0,0,.35);
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:18px; letter-spacing:.2px;
+    }
+    .meta{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin:12px 0 14px;
+    }
+    .kv{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px 12px;
+      background: rgba(0,0,0,.18);
+    }
+    .kv b{display:block; font-size:12px; color:var(--muted); font-weight:600; margin-bottom:4px}
+    .kv span{display:block; font-size:14px}
+    ul{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.6}
+    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .btn{
+      display:inline-block; text-decoration:none;
+      padding:12px 14px; border-radius:14px;
+      border:1px solid rgba(215,168,74,.45);
+      background: linear-gradient(135deg, rgba(215,168,74,.20), rgba(229,107,45,.12));
+      color:var(--text);
+      font-weight:650;
+    }
+    .btn:hover{border-color: rgba(215,168,74,.75)}
+    .btn.ghost{
+      border-color: var(--line);
+      background: rgba(0,0,0,.22);
+      color:var(--muted);
+      font-weight:600;
+    }
+    .btn.ghost:hover{color:var(--text); border-color: rgba(255,255,255,.2)}
+    .note{
+      margin-top:14px;
+      padding:12px 12px;
+      border-left: 3px solid rgba(215,168,74,.65);
+      background: rgba(0,0,0,.18);
+      color:var(--muted);
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    footer{
+      margin-top:26px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+    }
+    .smalllinks{display:flex; gap:12px; flex-wrap:wrap}
+    .smalllinks a{color:var(--muted); text-decoration:none}
+    .smalllinks a:hover{color:var(--text)}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <strong>xolosramirez.club</strong><br>
+          <span style="color:var(--muted); font-size:12px;">Eventos privados • Círculos de Presencia</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navegación">
+        <a href="#evento">Evento</a>
+        <a href="#acceso">Acceso</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Círculos de Presencia</h1>
+      <p class="sub">
+        Encuentros privados de comunidad, ritual y convivencia con los <b>Xoloitzcuintles Ramírez</b>.
+        La infraestructura digital existe para sostener la experiencia — no para reemplazarla.
+      </p>
+
+      <div class="pillrow" aria-label="Pilares">
+        <div class="pill">Ritual</div>
+        <div class="pill">Cuerpo</div>
+        <div class="pill">Comunidad</div>
+        <div class="pill">Tonalli</div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card" id="evento">
+        <h2>Evento en preparación — Temazcal privado (Teotihuacán)</h2>
+
+        <div class="meta" role="list">
+          <div class="kv" role="listitem">
+            <b>Ubicación</b>
+            <span>Valle de Teotihuacán, Edo. Méx.</span>
+          </div>
+          <div class="kv" role="listitem">
+            <b>Formato</b>
+            <span>Temazcal + convivio sencillo</span>
+          </div>
+          <div class="kv" role="listitem">
+            <b>Cupo</b>
+            <span>Limitado (grupo pequeño)</span>
+          </div>
+          <div class="kv" role="listitem">
+            <b>Acceso</b>
+            <span>NFT de Presencia (Tonalli)</span>
+          </div>
+        </div>
+
+        <ul>
+          <li>Encuentro íntimo y respetuoso (no turismo masivo).</li>
+          <li>Convivencia posterior con tamales y comunidad.</li>
+          <li>Presencia de Xoloitzcuintles Ramírez (en áreas seguras).</li>
+        </ul>
+
+        <div class="btnrow">
+          <!-- Cambia este link por tu formulario (Google Forms / Typeform / etc.) -->
+          <a class="btn" href="#acceso">Solicitar acceso</a>
+          <a class="btn ghost" href="#contacto">Contacto directo</a>
+        </div>
+
+        <div class="note">
+          Nota: el ritual de temazcal es para humanos. Los perros permanecen fuera del calor, en sombra e hidratación.
+          Cuidar su biología es parte del respeto al símbolo.
+        </div>
+      </section>
+
+      <section class="card" id="acceso">
+        <h2>Acceso (NFT de Presencia)</h2>
+        <p style="margin:0; color:var(--muted); line-height:1.6;">
+          El acceso se gestiona mediante un NFT funcional: una llave de entrada y un registro simbólico de presencia.
+        </p>
+
+        <ul>
+          <li>Acceso al evento privado.</li>
+          <li>Registro de presencia posterior (Tonalli).</li>
+          <li>Prioridad para futuros círculos.</li>
+        </ul>
+
+        <div class="note">
+          Si aún no usas Tonalli, aquí solo necesitas intención. La guía práctica se comparte al confirmar acceso.
+        </div>
+
+        <!-- Opcional: bloque para poner link al tutorial -->
+        <div class="btnrow" style="margin-top:12px;">
+          <!-- Reemplaza con el link real a tu tutorial cuando quieras -->
+          <a class="btn ghost" href="#" onclick="alert('Agrega aquí el link a tu tutorial de Tonalli.'); return false;">
+            Ver guía Tonalli (próximamente)
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <section class="card" id="contacto" style="margin-top:16px;">
+      <h2>Contacto</h2>
+      <p style="margin:0 0 10px; color:var(--muted); line-height:1.6;">
+        Para colaborar, preguntar o solicitar acceso, escríbenos:
+      </p>
+
+      <!-- Reemplaza los enlaces con los tuyos -->
+      <div class="btnrow">
+        <a class="btn" href="mailto:contacto@xolosramirez.com">contacto@xolosramirez.com</a>
+        <a class="btn ghost" href="https://xolosramirez.com" target="_blank" rel="noopener">xolosramirez.com</a>
+        <a class="btn ghost" href="https://xolosarmy.xyz" target="_blank" rel="noopener">xolosarmy.xyz</a>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> Xolos Ramírez • xolosArmy Network</div>
+      <div class="smalllinks">
+        <a href="#evento">Evento</a>
+        <a href="#acceso">Acceso</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
