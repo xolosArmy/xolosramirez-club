@@ -142,31 +142,61 @@
       nav a { margin: 0 10px; }
     }
 
-    /* Sellos NFT */
-    .sigil-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-    .sigil{
+    /* Nuevos estilos para la Galería de Sellos */
+    .sigil-card {
+      background: var(--obsidian);
       border: 1px solid var(--line);
-      background: rgba(0,0,0,0.25);
-      padding: 18px;
-      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
     }
-    .sigil h3{
+
+    .sigil-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 30px rgba(215, 168, 74, 0.1);
+    }
+
+    .sigil-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      filter: grayscale(20%) contrast(1.1);
+      transition: transform 0.6s ease;
+    }
+
+    .sigil-card:hover .sigil-image {
+      transform: scale(1.05);
+      filter: grayscale(0%);
+    }
+
+    .sigil-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sigil-content h3 {
       margin: 0 0 8px 0;
       font-size: 14px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #fff;
     }
-    .sigil p{
+
+    .sigil-p {
       margin: 0;
       color: var(--muted);
       font-size: 13px;
       line-height: 1.65;
+    }
+
+    .sigil-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
     }
     .sigil-tag{
       display:inline-block;
@@ -266,38 +296,53 @@
     <section class="card" id="sellos" style="margin-top:30px;">
       <h2>Los 5 Sellos de Presencia</h2>
       <p style="color:var(--muted); margin-top:10px;">
-        No son activos especulativos. Son <strong>sellos de presencia</strong>: un registro simbólico del cuerpo, el aliento y el corazón dentro del círculo.
+        No son activos especulativos. Son <strong>registros visuales del ritual</strong>: una crónica del cuerpo, el aliento y el corazón dentro del círculo.
       </p>
 
       <div class="sigil-grid">
-        <div class="sigil">
-          <span class="sigil-tag" style="border-color: var(--glow); color: var(--glow);">🔥 Fuego</span>
-          <h3>Abre</h3>
-          <p>El fuego <strong>abre el círculo</strong>, purifica y transforma. Portar este sello equivale a estar presente en la primera chispa.</p>
+        <div class="sigil-card">
+          <img src="https://i.imgur.com/sOUNBwl.jpeg" alt="Sello de Fuego" class="sigil-image">
+          <div class="sigil-content">
+            <span class="sigil-tag" style="border-color: var(--glow); color: var(--glow);">🔥 Fuego</span>
+            <h3>Abre</h3>
+            <p class="sigil-p">El guardián despierta el calor de las piedras volcánicas. El fuego purifica y transforma; es la primera chispa del encuentro.</p>
+          </div>
         </div>
 
-        <div class="sigil">
-          <span class="sigil-tag" style="border-color: #8fd18f; color: #8fd18f;">🌱 Tierra</span>
-          <h3>Sostiene</h3>
-          <p>La tierra <strong>sostiene el cuerpo</strong>, el silencio y la presencia. Es el suelo que te recuerda respirar sin prisa.</p>
+        <div class="sigil-card">
+          <img src="https://i.imgur.com/YtulZb6.png" alt="Sello de Tierra" class="sigil-image">
+          <div class="sigil-content">
+            <span class="sigil-tag" style="border-color: #8fd18f; color: #8fd18f;">🌱 Tierra</span>
+            <h3>Sostiene</h3>
+            <p class="sigil-p">Pies de obsidiana sobre el polvo de los ancestros. La tierra sostiene el cuerpo y el silencio; es el arraigo necesario.</p>
+          </div>
         </div>
 
-        <div class="sigil">
-          <span class="sigil-tag" style="border-color: #9ad6ff; color: #9ad6ff;">🌬️ Aliento</span>
-          <h3>Conecta</h3>
-          <p>El aliento <strong>conecta</strong> el cuerpo, el ritmo y la escucha. Es el hilo invisible que une a todos dentro del vapor.</p>
+        <div class="sigil-card">
+          <img src="https://i.imgur.com/Xj8P4Rd.png" alt="Sello de Aliento" class="sigil-image">
+          <div class="sigil-content">
+            <span class="sigil-tag" style="border-color: #9ad6ff; color: #9ad6ff;">🌬️ Aliento</span>
+            <h3>Conecta</h3>
+            <p class="sigil-p">El espíritu se disuelve en el vapor sagrado. El aliento es el hilo invisible que une a todos los presentes en el círculo.</p>
+          </div>
         </div>
 
-        <div class="sigil">
-          <span class="sigil-tag" style="border-color: #ff9ad6; color: #ff9ad6;">❤️ Teyolía</span>
-          <h3>Recuerda</h3>
-          <p><strong>Teyolía</strong> es el corazón que recuerda. No abre el círculo: lo mantiene vivo. Este sello no se porta: <em>se cuida</em>.</p>
+        <div class="sigil-card">
+          <img src="https://i.imgur.com/Ma7KlB3.png" alt="Sello de Teyolía" class="sigil-image">
+          <div class="sigil-content">
+            <span class="sigil-tag" style="border-color: #ff9ad6; color: #ff9ad6;">❤️ Teyolía</span>
+            <h3>Recuerda</h3>
+            <p class="sigil-p">La Teyolía late en el centro del mundo. No abre el círculo: lo mantiene vivo desde el interior del pecho.</p>
+          </div>
         </div>
 
-        <div class="sigil">
-          <span class="sigil-tag" style="border-color: #e0e0e0; color: #e0e0e0;">🤍 Silencio</span>
-          <h3>Sella</h3>
-          <p>No hay explicación. No hay urgencia. El silencio <strong>sella</strong>: el círculo queda completo.</p>
+        <div class="sigil-card">
+          <img src="https://i.imgur.com/0rw8R5R.png" alt="Sello de Silencio" class="sigil-image">
+          <div class="sigil-content">
+            <span class="sigil-tag" style="border-color: #e0e0e0; color: #e0e0e0;">🤍 Silencio</span>
+            <h3>Sella</h3>
+            <p class="sigil-p">Donde no hay forma, reside la verdad. Al terminar el ritual, solo queda la paz del vacío y el círculo completo.</p>
+          </div>
         </div>
       </div>
 
