@@ -141,6 +141,58 @@
       header { flex-direction: column; gap: 20px; }
       nav a { margin: 0 10px; }
     }
+
+    /* Sellos NFT */
+    .sigil-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .sigil{
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.25);
+      padding: 18px;
+      position: relative;
+    }
+    .sigil h3{
+      margin: 0 0 8px 0;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .sigil p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .sigil-tag{
+      display:inline-block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.35);
+      margin-bottom: 12px;
+    }
+    .seal-close{
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--text);
+      font-size: 14px;
+      text-align: center;
+    }
+    .seal-close em{
+      color: var(--muted);
+      font-style: italic;
+    }
+    @media (max-width: 768px){
+      .sigil-grid{ grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -186,7 +238,7 @@
           <li style="margin-bottom: 10px;">⚡ Presencia simbólica de Xoloitzcuintles Ramírez.</li>
         </ul>
 
-        <a href="#" class="btn">Solicitar Acceso</a>
+        <a href="#sellos" class="btn">Solicitar Acceso</a>
         <p style="font-size: 11px; color: var(--glow); margin-top: 15px; font-style: italic;">
           * Los Xoloitzcuintles permanecen en áreas de sombra e hidratación. Su bienestar es nuestra prioridad.
         </p>
@@ -210,6 +262,50 @@
         <a href="#" class="btn btn-ghost">Guía de Activación</a>
       </section>
     </main>
+
+    <section class="card" id="sellos" style="margin-top:30px;">
+      <h2>Los 5 Sellos de Presencia</h2>
+      <p style="color:var(--muted); margin-top:10px;">
+        No son activos especulativos. Son <strong>sellos de presencia</strong>: un registro simbólico del cuerpo, el aliento y el corazón dentro del círculo.
+      </p>
+
+      <div class="sigil-grid">
+        <div class="sigil">
+          <span class="sigil-tag" style="border-color: var(--glow); color: var(--glow);">🔥 Fuego</span>
+          <h3>Abre</h3>
+          <p>El fuego <strong>abre el círculo</strong>, purifica y transforma. Portar este sello equivale a estar presente en la primera chispa.</p>
+        </div>
+
+        <div class="sigil">
+          <span class="sigil-tag" style="border-color: #8fd18f; color: #8fd18f;">🌱 Tierra</span>
+          <h3>Sostiene</h3>
+          <p>La tierra <strong>sostiene el cuerpo</strong>, el silencio y la presencia. Es el suelo que te recuerda respirar sin prisa.</p>
+        </div>
+
+        <div class="sigil">
+          <span class="sigil-tag" style="border-color: #9ad6ff; color: #9ad6ff;">🌬️ Aliento</span>
+          <h3>Conecta</h3>
+          <p>El aliento <strong>conecta</strong> el cuerpo, el ritmo y la escucha. Es el hilo invisible que une a todos dentro del vapor.</p>
+        </div>
+
+        <div class="sigil">
+          <span class="sigil-tag" style="border-color: #ff9ad6; color: #ff9ad6;">❤️ Teyolía</span>
+          <h3>Recuerda</h3>
+          <p><strong>Teyolía</strong> es el corazón que recuerda. No abre el círculo: lo mantiene vivo. Este sello no se porta: <em>se cuida</em>.</p>
+        </div>
+
+        <div class="sigil">
+          <span class="sigil-tag" style="border-color: #e0e0e0; color: #e0e0e0;">🤍 Silencio</span>
+          <h3>Sella</h3>
+          <p>No hay explicación. No hay urgencia. El silencio <strong>sella</strong>: el círculo queda completo.</p>
+        </div>
+      </div>
+
+      <div class="seal-close">
+        🔥 Fuego abre · 🌱 Tierra sostiene · 🌬️ Aliento conecta · ❤️ Teyolía recuerda · 🤍 Silencio sella
+        <div style="margin-top:10px;"><em>Con SILENCIO, el círculo se cerró.</em></div>
+      </div>
+    </section>
 
     <section class="card" id="contacto" style="margin-top:30px; text-align: center;">
       <h2>Contacto Directo</h2>
